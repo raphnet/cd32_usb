@@ -39,14 +39,14 @@ typedef struct {
 	char x,y;
 	char btnRed, btnBlue, btnGreen, btnYellow;
 	char btnStart, btnL, btnR, btnXtra;
-} JagCtlState;
+} CD32CtlState;
 
-static void readController(JagCtlState *st)
+static void readController(CD32CtlState *st)
 {
 	unsigned char btns[8];
 	int i;
 
-	memset(st, 0, sizeof(JagCtlState));
+	memset(st, 0, sizeof(CD32CtlState));
 	st->x = st->y = 0x80;
 
 	
@@ -97,7 +97,7 @@ static void readController(JagCtlState *st)
 
 static void cd32Update(void)
 {
-	JagCtlState st;
+	CD32CtlState st;
 	unsigned char btns1=0;
 
 	readController(&st);
